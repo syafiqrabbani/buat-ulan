@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Tidur Ulan</title>
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+        }
+        p {
+            font-size: 1.5em;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 1s;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #bdc3c7;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 1.5s;
+        }
+        .love-button {
+            margin-top: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 2em;
+            color: #e74c3c;
+            transition: transform 0.2s;
+        }
+        .love-button:hover {
+            transform: scale(1.2);
+        }
+        .message {
+            display: none;
+            font-size: 1.5em;
+            margin-top: 20px;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Selamat Tidur, Ulan!</h1>
+        <p>Mimpi indah sayangkuuu cintakuuu</p>
+        <div class="footer">💖💖💖💖💖💖</div>
+        
+        <button class="love-button" onclick="showMessage()">❤️</button>
+        <div class="message" id="message">woppyuu sayang🖕</div>
+    </div>
+
+    <script>
+        function showMessage() {
+            const messageElement = document.getElementById('message');
+            messageElement.style.display = 'block';
+            messageElement.style.opacity = '0'; // Reset opacity for animation
+            messageElement.style.animation = 'bounce 1s forwards'; // Apply bounce animation
+            messageElement.style.animationDelay = '0.2s'; // Delay for smooth effect
+            
+            setTimeout(() => {
+                messageElement.style.opacity = '1'; // Fade in after bounce
+            }, 200); // Delay to match the bounce animation
+        }
+    </script>
+</body>
+</html>
